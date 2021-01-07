@@ -74,12 +74,27 @@
                     </div>
             </section>
             <section>
-                <div class="blog">
+                <div class="blog" id="blog">
                     <h1>Blog</h1>
+                  <!-- Example row of columns -->
+                  <div class="row" id="posts-collection"></div>
                 </div>
             </section>
+            <section>
+                <footer>
+                    <div class="contact" id="contact">
+                        <h1>Contact</h1>
+                        <p>kontakt@markb.de</p>
+                        <div class="twitter">
+                           <a href="https://twitter.com/marky_mark_0"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACyklEQVRoQ+2Yj1EVMRDGdytAK1AqECsQKxAqUCqQDsQKlAqECrQDpQOpQKgAqWCdn5Obubm7JJtLwps3czvzhnu8y2a/b/8mKnsuuuf2ywZg1x7cPLB5oJKBLYRKCDSzZyLyXkRORORIRPj+S0TuRORaVXmeCetU9e/Sb1EPmNlLVUVxEzGzDyLyJRgd0wmA08FYbAiA+R+AZ5IC8ENEHlT1rBaBmX0TEQB45HfwynHwEmvexryzCCC4+iHsdlUDIjAPgLVyqarnscUxAKD/OVq0CkQg4k8mbFLAPgc7yJnnqjrzohcAm+DaM1Xlr0sasD/scysix0uJXAIAZVSCr6oKM1kxM/LoXfbF9AsYfxIrKDEAZD+ujwnV6UJVr1N7mxlV5U0FgCjzg85UFfJsDhBYpobPQqsBgGj18QAgcb4XsAcYQAOEzyPhVumB9QAw3MyuQiMpwNH01XUAzAz2D4jxHYM4zE0DnipEOCy28aZcLyhT1eyw6enEve2M6b+NzT/jBbVVqCe45AjhqULTcaKnsUu6mUAp0UlJxpiZUQY/5pR0+P1RVTkrZCWbJDsCQWN0jd9ZAKEfEE4XlU0py+bohdfeoTELwMwwfphneObTU25U1b2HB0BusGsNxs0+G2cBhBB6qmR2lU5XH5jS+gQjxT0dP3b7EHOzywPDYjMjkT+1jpkwuXLicp/2so0sZmS46uCQTaK9agSGoyqTb7EUeWCsPQDhtsFdMSLWrTbencQTw+mQdGe84OqWCVqrjC8CYGb0As4JdMhaw0lYDurFMT8lYxZCo8aFkcM5oDZMxvtehguBxbvO0iRI3UqQVDU3ClNbbgi7Fqy7+8Co4hA6L0rZERFChZGYu6RmF8VuAJPkJZz4EE6MFwjfD8IzDCPE9f8bitZsLxG4uoyu8EaXJRuALrQWKN08UEBWl1c3D3ShtUDp3nvgHzwb8DGf2W+tAAAAAElFTkSuQmCC"/></a> 
+                           <a href="https://instagram.com/marky_mark_0"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADiklEQVRoQ+1ZO24UQRB97wTACbBPAM6RsBOERACkJMAJsAMiAkxCQIJ9AAQOyE1EiB0Q2+YC2CcAn6DQW3Vb7d7+zezMopG2pdVqNdPd9ape16vqJSY+OHH7sQLwvyO4isDkImBmawDuA3gC4CYA/danzzgHoM9fAIcAjknqd/NoppAz/C2AF82r93tRQHZagTQBMDMZ/dF5vJ9Z3WYpIgLxpTatCsAZ/zla6MKFXOE+rW1SeX4XgD6bAG5H776sgSgCcLQ5CTx/Ke6TPFrQ6OR056w9ADfcC4rERolONQAK4XO3mIxfI6lFRxtmpmjIQR7EEcmt3IZZAM77v4OJW2N43sx2ADwCcELytfYzs2135vz267kolACEi5yRlGcGHWb2DMDXYNE9kgIkEIq0j4IOtKg1N0oAlM4euxn7JAWoeZiZNOKOmyAHzFHPzD4AmHndjZ8k7zkA4f7fSEp3OgEQDyVYGk9JasHicEZLK7RZLG7KWDpTcsYMjJk9BPA9WPQNyffu2S4AraUhgVOW6gRA/PdGVPnfQSuu5XgzE/8fAPhF8pO3MDoH5yTXuwKwYEIRgJmF2aoWKP/8HUl5OTnMTB7/4R+STNK9dAaaAGSEbl90ITkTOZcapeavImuzQjU0AInJnOI6zotqOrAa0orN1LsBkDDHi05KkakDPlwEcuEzM6W20KtJoKHXXTSk7kUqDRqBAgBlFl+/NKfa6MwkD+joABx9/gSerHo/yDASxTAKt2IaLQNAE0cLWaaYJFYAzOzKQ6kzMCSFMus3RbhJB0Y+xBck53rqQSkEIKnEk0mjBQASMKXSsIMS2GSb6TRA5UEofMkmaSkRcOqqEiHumSVwB1EpIcGLbzSWVkpMspgLVba1nA4b8pwEqF7art02ROX0JUlPu2vrlrJQ34ZGnZuoEl+R6CpGZbfaxurFgJkt3NAM0VL6Pvq0xeio6Av379WRhU29DNho7VSGeM/MVGd52vRq6iUuo1+rpMAmrlWyhWLtYis8B9VbsoE8L9qFWpGlj/arAYijIBDKIAdDGBuvYWbSCh3eMOMUM2Dfy12lWB2yIS53VbTJUf47xJXl/lWz3+LJTOPeMnWRd6rGVymU6GUlVP6yaxHjSnOPRaPWe9gqhRI8Vbh18+b/YvLXh30Bnbm/mJQwDnOFYG7xzgD6WjnWvBWAsTzbuu4qAq2eGuu9yUfgH8e9BE9O+ia4AAAAAElFTkSuQmCC"/></a>
+                        </div>
+                    </div>
+                </footer>
+                
+            </section>
+            <div id="snow"></div>
         </main>
-
 
         
 
@@ -88,5 +103,10 @@
 
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
+
+        <!--Firebase-->
+        <script src="https://gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+        <script src="./assets/js/firebase.js"></script>
     </body>
 </html>

@@ -1,0 +1,6 @@
+ingress:
+  - hostname: markb.de
+    service: http://wordpress:80
+  - hostname: www.markb.de
+    service: http://wordpress:80
+  - service: http_status:404

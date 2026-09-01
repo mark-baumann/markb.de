@@ -1,0 +1,37 @@
+services:
+
+  wordpress:
+    image: wordpress:latest
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - /opt/data/wordpress/html:/var/www/html
+    networks: [edge]
+    ports:
+      - "127.0.0.1:8580:80"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:80/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  wordpress-db:
+    image: mariadb:11
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - /opt/data/wordpress/db:/var/lib/mysql
+    networks: [edge]
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN}
+    networks: [edge]
+
+networks:
+  edge:
+    driver: bridge
